@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Test</title>
+    <style>
+        .container {
+            max-width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+
+        .icon-face {
+            text-align: center;
+            margin: 50px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Emoji Review</h1>
+        <div class="icon-face"><img src="./exited.svg" alt=""></div>
+        <div class="review-slider">
+            <input class="slider" type="range" value="0" min="0" max="4" step="0">
+        </div>
+    </div>
+    <script>
+        let sliderRange = document.querySelector('input.slider');
+        let divIcon = document.querySelector('.icon-face img');
+        let iconFace = ['./exited.svg', './happy.svg', './ok.svg', './sad.svg', './angry.svg'];
+
+        sliderRange.addEventListener('input', (e) => {
+            let rangeValue = e.target.value;
+            divIcon.src = iconFace[rangeValue];
+        });
+    </script>
+</body>
+
+</html>
